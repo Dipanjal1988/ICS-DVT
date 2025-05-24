@@ -16,7 +16,7 @@ import io
 
 PASSWORD = "icsdvt2025"
 
-LOGO_URL = "https://www.bing.com/images/search?view=detailV2&ccid=m5miuXzn&id=048E5A0965982976E70D6E6E6D147EB8AA145C7F&thid=OIP.m5miuXznrpIu3a1wEuCmnQAAAA&mediaurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D100063995682182&exph=180&expw=180&q=infinite+computer+solutions&form=IRPRST&ck=A826B0E9E49BD1AE45D29FB7E13FB965&selectedindex=0&itb=1&cw=1375&ch=637&ajaxhist=0&ajaxserp=0&cit=ccid_ysz6LsER*cp_C269DA167DAEA11353549162F450591A*mid_66E6C615303671686DBFEAFD0125E5AC1DE7C887*simid_608028402241718243*thid_OIP.ysz6LsER5OvCnU7r32NQbgAAAA&vt=2"
+LOGO_URL = "https://raw.github.com/Dipanjal1988/ICS-DVT/blob/main/Infinite_Computer_Solutions_Logo.jpg"
 
 
 
