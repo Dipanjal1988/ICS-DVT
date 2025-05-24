@@ -191,35 +191,35 @@ if file1 and file2:
 
    # Step 4: Align on primary key and columns
 
-   common_keys = df1.index.intersection(df2.index)
+    common_keys = df1.index.intersection(df2.index)
 
-   common_cols = df1.columns.intersection(df2.columns)
+    common_cols = df1.columns.intersection(df2.columns)
 
 
 
-   df1_common = df1.loc[common_keys, common_cols].sort_index()
+    df1_common = df1.loc[common_keys, common_cols].sort_index()
 
-   df2_common = df2.loc[common_keys, common_cols].sort_index()
+    df2_common = df2.loc[common_keys, common_cols].sort_index()
 
 
 
    # Step 5: Cell-by-cell comparison
 
-   comparison_result = df1_common.eq(df2_common)
+    comparison_result = df1_common.eq(df2_common)
 
-   total_cells = comparison_result.size
+    total_cells = comparison_result.size
 
-   mismatched_cells = total_cells - comparison_result.values.sum()
+    mismatched_cells = total_cells - comparison_result.values.sum()
 
-  data_diff_pct = round((mismatched_cells / max(total_cells, 1)) * 100, 2)
+    data_diff_pct = round((mismatched_cells / max(total_cells, 1)) * 100, 2)
 
 
 
   # Step 6: Build preview
 
-  diff_mask = ~comparison_result
+   diff_mask = ~comparison_result
 
-  mismatch_preview = df1_common[diff_mask].dropna(how="all").head(5)
+   mismatch_preview = df1_common[diff_mask].dropna(how="all").head(5)
 
 
 
