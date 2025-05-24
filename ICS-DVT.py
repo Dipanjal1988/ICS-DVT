@@ -159,7 +159,7 @@ if file1 and file2:
 
     # Data Match Validation
 
-    primary_key = df1.columns[0]
+    primary_key = df1.iloc[0,0]
 
 
 
