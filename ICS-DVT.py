@@ -329,13 +329,13 @@ if file1 and file2:
 
                 st.markdown(f"**{subkey}:**")
 
-                if isinstance(subval, list):
+              #  if isinstance(subval, list):
 
-                    for item in subval:
+              #      for item in subval:
 
-                        st.json(item)
+               #         st.json(item)
 
-                else:
+               # else:
 
                     st.write(subval)
 
