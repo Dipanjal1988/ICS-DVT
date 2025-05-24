@@ -179,8 +179,6 @@ if file1 and file2:
 
     mismatched_rows = diff_df.index.nunique()
 
-    for i in range (min_len):
-
     data_diff_pct = round(mismatched_rows / max(min_len, 1) * 100, 2)
 
 
