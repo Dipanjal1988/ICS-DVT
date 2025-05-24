@@ -423,6 +423,6 @@ if file1 and file2:
 
 
 
-    pdf_bytes = bytes(pdf.output(dest="S"))
+    pdf_bytes = pdf.output(dest="S")
 
     st.download_button("Download PDF", pdf_bytes, "validation_detailed_report.pdf", "application/pdf")
