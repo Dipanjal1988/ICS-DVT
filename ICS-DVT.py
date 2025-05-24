@@ -163,59 +163,59 @@ if file1 and file2:
 
 
 
-# Inner join on primary key
+    # Inner join on primary key
 
-df1_indexed = df1.set_index(primary_key)
+    df1_indexed = df1.set_index(primary_key)
 
-df2_indexed = df2.set_index(primary_key)
-
-
-
-# Keep only rows with matching keys
-
-common_keys = df1_indexed.index.intersection(df2_indexed.index)
-
-df1_common = df1_indexed.loc[common_keys].sort_index()
-
-df2_common = df2_indexed.loc[common_keys].sort_index()
+    df2_indexed = df2.set_index(primary_key)
 
 
 
-# Align columns
+    # Keep only rows with matching keys
 
-common_cols = df1_common.columns.intersection(df2_common.columns)
+    common_keys = df1_indexed.index.intersection(df2_indexed.index)
 
-df1_final = df1_common[common_cols]
+    df1_common = df1_indexed.loc[common_keys].sort_index()
 
-df2_final = df2_common[common_cols]
-
-
-
-# Compare values
-
-comparison_result = df1_final.eq(df2_final)
-
-total_cells = comparison_result.size
-
-mismatched_cells = total_cells - comparison_result.values.sum()
-
-data_diff_pct = round((mismatched_cells / max(total_cells, 1)) * 100, 2)
+    df2_common = df2_indexed.loc[common_keys].sort_index()
 
 
 
-st.markdown(f"**Data Mismatch (Cell-wise, Key-based)**: {mismatch_pct}%")
+    # Align columns
+
+    common_cols = df1_common.columns.intersection(df2_common.columns)
+
+    df1_final = df1_common[common_cols]
+ 
+    df2_final = df2_common[common_cols]
 
 
 
-# Optional: show first 5 mismatches
+   # Compare values
 
-diff_mask = ~comparison_result
+    comparison_result = df1_final.eq(df2_final)
 
-mismatch_preview = df1_final[diff_mask].dropna(how='all').head(5)
+    total_cells = comparison_result.size
+
+    mismatched_cells = total_cells - comparison_result.values.sum()
+
+    data_diff_pct = round((mismatched_cells / max(total_cells, 1)) * 100, 2)
 
 
 
-details["Data Details"] = {
+    st.markdown(f"**Data Mismatch (Cell-wise, Key-based)**: {mismatch_pct}%")
+
+
+
+    # Optional: show first 5 mismatches
+
+    diff_mask = ~comparison_result
+
+    mismatch_preview = df1_final[diff_mask].dropna(how='all').head(5)
+
+
+
+     details["Data Details"] = {
 
     "Total Compared Rows": len(common_keys),
 
