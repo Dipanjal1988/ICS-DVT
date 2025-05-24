@@ -177,7 +177,7 @@ if file1 and file2:
 
     diff_df = df1_trimmed.compare(df2_trimmed)
 
-    mismatched_rows = diff_df.index.nunique()
+    mismatched_rows = diff_df.index.unique()
 
     data_diff_pct = round(mismatched_rows / max(min_len, 1) * 100, 2)
 
@@ -188,7 +188,7 @@ if file1 and file2:
     details["Data Details"] = {
 
 
-        "Sample Mismatched Rows": df1_trimmed[mismatched_rows].head(5).to_dict(orient="records")
+        "Sample Mismatched Rows": df1_trimmed.loc[mismatched_rows].head(5).to_dict(orient="records")
 
     }
 
