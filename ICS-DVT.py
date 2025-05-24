@@ -225,7 +225,7 @@ if file1 and file2:
 
   # Step 7: Display in Streamlit
 
-    st.markdown(f"**Data Mismatch (Row-by-Row, Keyed on First Column)**: {data_diff_pct}%")
+    st.markdown(f"- **Data Mismatch (Row-by-Row, Keyed on First Column)**: {data_diff_pct}%")
 
 
 
