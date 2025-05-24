@@ -44,7 +44,7 @@ if not st.session_state.authenticated:
 
     with col2:
 
-        st.image(LOGO_URL, width=80)
+        st.title("No Surprises. Just Clean Data")
 
 
 
@@ -87,7 +87,7 @@ with col1:
 
 with col2:
 
-    st.image(LOGO_URL, width=80)
+    st.title("No surprises. Just clean data")
 
 
 
