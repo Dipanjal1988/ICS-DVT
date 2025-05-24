@@ -16,7 +16,7 @@ import io
 
 PASSWORD = "icsdvt2025"
 
-LOGO_URL = "https://github.com/Dipanjal1988/ICS-DVT/blob/main/Infinite_Computer_Solutions_Logo.jpg"
+LOGO_URL = "https://github.com/Dipanjal1988/ICS-DVT/blob/a3655b0f53abd40fbf2781fbc112043b2145f0cc/Infinite_Computer_Solutions_Logo.jpg"
 
 
 
