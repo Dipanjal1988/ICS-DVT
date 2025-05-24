@@ -423,6 +423,6 @@ if file1 and file2:
 
 
 
-    pdf_bytes = pdf.output(dest="S")
+    pdf_bytes = pdf.output(dest="S").encode("latin-1")
 
     st.download_button("Download PDF", pdf_bytes, "validation_detailed_report.pdf", "application/pdf")
