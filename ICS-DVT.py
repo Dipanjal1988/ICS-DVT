@@ -215,7 +215,7 @@ if file1 and file2:
 
 
 
-     details["Data Details"] = {
+    details["Data Details"] = {
 
     "Total Compared Rows": len(common_keys),
 
