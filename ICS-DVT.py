@@ -161,23 +161,23 @@ if file1 and file2:
 
     # Step 1: Load source and target CSVs without treating first row as header
 
-    df1_raw = pd.read_csv(file1, header=None)
+   # df1_raw = pd.read_csv(file1, header=None)
 
-    df2_raw = pd.read_csv(file2, header=None)
+   # df2_raw = pd.read_csv(file2, header=None)
 
 
 
     # Step 2: Use first row as header, then drop it from data
 
-    df1_raw.columns = df1_raw.iloc[0]
+    #df1_raw.columns = df1_raw.iloc[0]
 
-    df1 = df1_raw[1:].reset_index(drop=True)
+    #df1 = df1_raw[1:].reset_index(drop=True)
 
 
 
-    df2_raw.columns = df2_raw.iloc[0]
+    #df2_raw.columns = df2_raw.iloc[0]
 
-    df2 = df2_raw[1:].reset_index(drop=True)
+    #df2 = df2_raw[1:].reset_index(drop=True)
 
 
 
