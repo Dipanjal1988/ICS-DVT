@@ -226,41 +226,7 @@ details["Data Details"] = {
     "Sample Mismatched Cells": mismatch_preview.to_dict(orient="index")
 
 }
-    # common_cols = list(set(df1.columns).intersection(set(df2.columns)))
-
-   #  df1_common = df1[common_cols].reset_index(drop=True)
-
-    # df2_common = df2[common_cols].reset_index(drop=True)
-
-
-
-    # min_len = min(len(df1_common), len(df2_common))
-
-    # df1_trimmed = df1_common.head(min_len)
-
-    # df2_trimmed = df2_common.head(min_len)
-
-
-
-    # diff_df = df1_trimmed.compare(df2_trimmed)
-
-    # mismatched_rows = diff_df.index.unique()
-
-   # data_diff_pct = round(mismatched_rows / max(min_len, 1) * 100, 2)
-
-
-
-    # st.markdown(f"- **Data Mismatch**: {data_diff_pct}%")
-
-    # details["Data Details"] = {
-
-
-        # "Sample Mismatched Rows": df1_trimmed.loc[mismatched_rows].head(5).to_dict(orient="records")
-
-  #  }
-
-
-
+  
     # Null Check
 
     nulls_source = df1.isnull().sum().sum()
