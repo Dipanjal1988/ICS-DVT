@@ -217,15 +217,15 @@ if file1 and file2:
 
   # Step 6: Build preview
 
-   diff_mask = ~comparison_result
+    diff_mask = ~comparison_result
 
-   mismatch_preview = df1_common[diff_mask].dropna(how="all").head(5)
+    mismatch_preview = df1_common[diff_mask].dropna(how="all").head(5)
 
 
 
   # Step 7: Display in Streamlit
 
-   st.markdown(f"**Data Mismatch (Row-by-Row, Keyed on First Column)**: {data_diff_pct}%")
+    st.markdown(f"**Data Mismatch (Row-by-Row, Keyed on First Column)**: {data_diff_pct}%")
 
 
 
