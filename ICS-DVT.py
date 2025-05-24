@@ -252,9 +252,9 @@ if file1 and file2:
 
             st.markdown("- Row count difference suggests filtering or load issues.")
 
-        if data_diff_pct > 0:
+       # if data_diff_pct > 0:
 
-            st.markdown("- Row-level data mismatch found. Verify joins and transformations.")
+         #   st.markdown("- Row-level data mismatch found. Verify joins and transformations.")
 
         if null_pct > 0:
 
