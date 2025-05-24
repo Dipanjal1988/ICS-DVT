@@ -229,13 +229,13 @@ if file1 and file2:
 
 
 
-details["Data Details"] = {
+    details["Data Details"] = {
 
     "Total Compared Rows": len(common_keys),
 
     "Compared Columns": list(common_cols),
 
-    "Cell-wise Mismatch %": mismatch_pct,
+    "Cell-wise Mismatch %": data_diff_pct,
 
     "Sample Mismatched Cells": mismatch_preview.to_dict(orient="index")
 
