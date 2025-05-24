@@ -159,63 +159,77 @@ if file1 and file2:
 
     # Data Match Validation
 
-    primary_key = df1.iloc[0,0]
+    # Step 1: Load source and target CSVs without treating first row as header
+
+    df1_raw = pd.read_csv(file1, header=None)
+
+    df2_raw = pd.read_csv(file2, header=None)
 
 
 
-    # Inner join on primary key
+    # Step 2: Use first row as header, then drop it from data
 
-    df1_indexed = df1.set_index(primary_key)
+    df1_raw.columns = df1_raw.iloc[0]
 
-    df2_indexed = df2.set_index(primary_key)
-
-
-
-    # Keep only rows with matching keys
-
-    common_keys = df1_indexed.index.intersection(df2_indexed.index)
-
-    df1_common = df1_indexed.loc[common_keys].sort_index()
-
-    df2_common = df2_indexed.loc[common_keys].sort_index()
+    df1 = df1_raw[1:].reset_index(drop=True)
 
 
 
-    # Align columns
+    df2_raw.columns = df2_raw.iloc[0]
 
-    common_cols = df1_common.columns.intersection(df2_common.columns)
-
-    df1_final = df1_common[common_cols]
- 
-    df2_final = df2_common[common_cols]
+    df2 = df2_raw[1:].reset_index(drop=True)
 
 
 
-   # Compare values
+    # Step 3: Set first column as primary key
 
-    comparison_result = df1_final.eq(df2_final)
+    df1 = df1.set_index(df1.columns[0])
 
-    total_cells = comparison_result.size
-
-    mismatched_cells = total_cells - comparison_result.values.sum()
-
-    data_diff_pct = round((mismatched_cells / max(total_cells, 1)) * 100, 2)
+    df2 = df2.set_index(df2.columns[0])
 
 
 
-    st.markdown(f"**Data Mismatch (Cell-wise, Key-based)**: {mismatch_pct}%")
+   # Step 4: Align on primary key and columns
+
+   common_keys = df1.index.intersection(df2.index)
+
+   common_cols = df1.columns.intersection(df2.columns)
 
 
 
-    # Optional: show first 5 mismatches
+   df1_common = df1.loc[common_keys, common_cols].sort_index()
 
-    diff_mask = ~comparison_result
-
-    mismatch_preview = df1_final[diff_mask].dropna(how='all').head(5)
+   df2_common = df2.loc[common_keys, common_cols].sort_index()
 
 
 
-    details["Data Details"] = {
+   # Step 5: Cell-by-cell comparison
+
+   comparison_result = df1_common.eq(df2_common)
+
+   total_cells = comparison_result.size
+
+   mismatched_cells = total_cells - comparison_result.values.sum()
+
+  data_diff_pct = round((mismatched_cells / max(total_cells, 1)) * 100, 2)
+
+
+
+  # Step 6: Build preview
+
+  diff_mask = ~comparison_result
+
+  mismatch_preview = df1_common[diff_mask].dropna(how="all").head(5)
+
+
+
+  # Step 7: Display in Streamlit
+
+   st.markdown(f"**Data Mismatch (Row-by-Row, Keyed on First Column)**: {data_diff_pct}%")
+
+
+
+details["Data Details"] = {
 
     "Total Compared Rows": len(common_keys),
 
