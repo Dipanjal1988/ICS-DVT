@@ -36,7 +36,7 @@ if "password_attempt" not in st.session_state:
 
 if not st.session_state.authenticated:
 
-    col1, col2 = st.columns([6, 6])
+    col1, col2 = st.columns([6, 12])
 
     with col1:
 
@@ -44,7 +44,7 @@ if not st.session_state.authenticated:
 
     with col2:
 
-        st.title("No Surprises. Just Clean Data")
+        st.title("No Surprises. Just Clean Data.")
 
 
 
@@ -79,7 +79,7 @@ if not st.session_state.authenticated:
 
 # MAIN APP HEADER
 
-col1, col2 = st.columns([6, 6])
+col1, col2 = st.columns([6, 12])
 
 with col1:
 
@@ -87,7 +87,7 @@ with col1:
 
 with col2:
 
-    st.title("No surprises. Just clean data")
+    st.title("No surprises. Just clean data.")
 
 
 
