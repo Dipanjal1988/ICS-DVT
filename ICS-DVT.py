@@ -187,7 +187,6 @@ if file1 and file2:
 
     details["Data Details"] = {
 
-        "Total Mismatched Rows": int(diff_count),
 
         "Sample Mismatched Rows": df1_trimmed[mismatched_rows].head(5).to_dict(orient="records")
 
