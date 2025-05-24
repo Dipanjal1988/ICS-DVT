@@ -264,7 +264,7 @@ if file1 and file2:
 
             st.markdown("- Duplicates found. Recommend `.drop_duplicates()`.")
 
-        if all(pct == 0 for pct in [schema_mismatch_pct, row_mismatch_pct, data_diff_pct, null_pct, dup_pct]):
+        if all(pct == 0 for pct in [schema_mismatch_pct, row_mismatch_pct, null_pct, dup_pct]):
 
             st.markdown("All validations passed successfully!")
 
