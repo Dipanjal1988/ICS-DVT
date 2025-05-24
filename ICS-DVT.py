@@ -183,9 +183,9 @@ if file1 and file2:
 
     # Step 3: Set first column as primary key
 
-    df1 = df1.set_index(df1.columns[0])
+    df1 = df1.set_index(df1.iloc[0,0])
 
-    df2 = df2.set_index(df2.columns[0])
+    df2 = df2.set_index(df2.iloc[0,0])
 
 
 
