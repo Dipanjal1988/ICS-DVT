@@ -237,7 +237,7 @@ if file1 and file2:
 
     "Cell-wise Mismatch %": data_diff_pct,
 
-    "Sample Mismatched Cells": mismatch_preview.to_dict(orient="index")
+    #"Sample Mismatched Cells": mismatch_preview.to_dict(orient="index")
 
 }
   
