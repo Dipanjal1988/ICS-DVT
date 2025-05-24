@@ -175,11 +175,15 @@ if file1 and file2:
 
 
 
-    row_equal = df1_trimmed.eq(df2_trimmed)
+    mismatched_rows=[]
 
-    mismatched_rows = ~row_equal.all(axis=1)
+    for i in range (min_len):
 
-    diff_count = mismatched_rows.sum()
+    if not df1_trimmed.iloc[i].equals(df2_trimmed.iloc[i]:
+
+    mismatched_rows.append(i)
+
+    diff_count = len(mismatched_rows)
 
     data_diff_pct = round(diff_count / max(min_len, 1) * 100, 2)
 
