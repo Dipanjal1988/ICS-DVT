@@ -16,7 +16,7 @@ import io
 
 PASSWORD = "icsdvt2025"
 
-LOGO_URL = "https://github.com/Dipanjal1988/ICS-DVT/blob/main/Infinite_Computer_Solutions_Logo.jpg"
+# LOGO_URL = "https://github.com/Dipanjal1988/ICS-DVT/blob/main/Infinite_Computer_Solutions_Logo.jpg"
 
 
 
@@ -44,7 +44,7 @@ if not st.session_state.authenticated:
 
     with col2:
 
-        st.image(LOGO_URL, width=300)
+        #st.image(LOGO_URL, width=300)
 
 
 
@@ -87,7 +87,7 @@ with col1:
 
 with col2:
 
-    st.image(LOGO_URL, width=300)
+    #st.image(LOGO_URL, width=300)
 
 
 
